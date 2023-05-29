@@ -1,23 +1,21 @@
 package com.example.teamprojectmusicandpainting.domain;
 
-import java.util.List;
-
 public class User extends Entity<Long>{
     private String first_name;
     private String last_name;
     private String email;
     private String password;
-
-    private List<String> myPlaylist;
+    private String userMusicPlaylist;
 
     public User() {
     }
 
-    public User(String first_name, String last_name, String email, String password) {
+    public User(String first_name, String last_name, String email, String password, String userMusicPlaylist) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.password = password;
+        this.userMusicPlaylist = userMusicPlaylist;
     }
 
     public String getFirst_name() {
@@ -52,12 +50,22 @@ public class User extends Entity<Long>{
         this.password = password;
     }
 
+    public String getUserMusicPlaylist() {
+        return userMusicPlaylist;
+    }
+
+    public void setMyPlaylist(String myPlaylist) {
+        this.userMusicPlaylist = myPlaylist;
+    }
+
     @Override
     public String toString() {
-        return "Id: " + super.getId() +
-                ", first_name='" + first_name + '\'' +
+        return "User{" +
+                "first_name='" + first_name + '\'' +
                 ", last_name='" + last_name + '\'' +
                 ", email='" + email + '\'' +
-                ", password='" + password;
+                ", password='" + password + '\'' +
+                ", userMusicPlaylist=" + userMusicPlaylist +
+                '}';
     }
 }
